@@ -1,0 +1,7 @@
+/usr/bin/ld: CMakeFiles/LinkerErr.dir/Tasks/01-Linker-Errors/Main.cpp.o: in function `main':
+Main.cpp:(.text+0x36): undefined reference to `Grid::Grid()'
+/usr/bin/ld: Main.cpp:(.text+0x45): undefined reference to `Grid::~Grid()'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/LinkerErr.dir/build.make:113: bin/LinkerErr] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/LinkerErr.dir/all] Error 2
+gmake: *** [Makefile:91: all] Error 2
