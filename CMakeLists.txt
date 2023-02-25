@@ -7,6 +7,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 
 # Lab files
 message(STATUS "Adding Executables")
+set(TASK_DIR "${CMAKE_SOURCE_DIR}/Tasks")
+
+add_executable(LinkerErr "${TASK_DIR}/01-Linker-Errors/Main.cpp" "${TASK_DIR}/01-Linker-Errors/Grid.cpp")
 
 option(BUILD_LABBOOK "Build the labbook" OFF)
 
