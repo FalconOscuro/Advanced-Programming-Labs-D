@@ -9,7 +9,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 message(STATUS "Adding Executables")
 set(TASK_DIR "${CMAKE_SOURCE_DIR}/Tasks")
 
-add_executable(LinkerErr "${TASK_DIR}/01-Linker-Errors/Main.cpp" "${TASK_DIR}/01-Linker-Errors/Grid.cpp")
+add_executable(Grid "${TASK_DIR}/02-Reading/Main.cpp" "${TASK_DIR}/02-Reading/Grid.cpp")
+configure_file(${TASK_DIR}/01-Linker-Errors/Grid1.txt ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Grid1.txt COPYONLY)
 
 option(BUILD_LABBOOK "Build the labbook" OFF)
 
