@@ -1,23 +1,33 @@
-\documentclass[Lab-D.tex]{subfiles}
-
-\begin{document}
-    \section{Linker Errors}
-        \subsection*{Question:}
-            Show how not defining functions can lead to linking errors when 
-            compiling.
+\section{Linker Errors}
+    \subsection*{Question:}
+        Show how not defining functions can lead to linking errors when 
+        compiling.
             
-        \subsection*{Solution:}
-            %\inputminted{cpp}{../01-FileIO/FileIO.cpp}
+    \subsection*{Solution:}
+        \inputminted{cpp}{../Tasks/01-Linker-Errors/Grid.h}
+        \inputminted{cpp}{../Tasks/01-Linker-Errors/Grid.cpp}
 
-        \subsection*{Test Data:}
+    \subsection*{Test Data:}
+        None required.
         
-        \subsection*{Sample Output:}
+    \newpage
+    \subsection*{Sample Output:}
+        Error message when attempting to compile with linker errors:
 
-        \subsection*{Reflection:}
-            In order to define a method for a class within a header file,
-            first a definition is created in the class header,
-            this states the method name, return type and any arguments
-            (you may choose to name the arguments, but this has no bearing on the declaration).
-            Next a source file is created, including the header file,
-            within this the method functionality is declared.
-\end{document}
+        \par\noindent\rule{\textwidth}{0.5pt}\\{\scriptsize
+            \noindent/usr/bin/ld: CMakeFiles/LinkerErr.dir/Tasks/01-Linker-Errors/Main.cpp.o: in function `main':\\
+            Main.cpp:(.text+0x36): undefined reference to `Grid::Grid()'\\
+            /usr/bin/ld: Main.cpp:(.text+0x45): undefined reference to `Grid::~Grid()'\\
+            collect2: error: ld returned 1 exit status\\
+            gmake[2]: *** [CMakeFiles/LinkerErr.dir/build.make:113: bin/LinkerErr] Error 1\\
+            gmake[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/LinkerErr.dir/all] Error 2\\
+            gmake: *** [Makefile:91: all] Error 2
+        }\par\noindent\rule{\textwidth}{0.5pt}
+
+    \subsection*{Reflection:}
+        In order to define a method for a class within a header file,
+        first a definition is created in the class header,
+        this states the method name, return type and any arguments
+        (you may choose to name the arguments, but this has no bearing on the declaration).
+        Next a source file is created, including the header file,
+        within this the method functionality is declared.

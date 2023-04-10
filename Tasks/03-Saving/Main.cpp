@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-int main(int argn, char* argv[])
+int main()
 {
     Grid grid;
     grid.LoadGrid("Grid1.txt");

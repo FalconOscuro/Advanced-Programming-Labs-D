@@ -49,9 +49,9 @@ void functionD() {
 	cout << "x= " << x << endl;
 }
 
-int main(int, char**) {
+int main() {
 
-	functionA();
+	//functionA();
 	//functionB();
 	//functionC();
 	//functionD();

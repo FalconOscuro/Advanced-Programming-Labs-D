@@ -30,13 +30,20 @@ bool Grid::LoadGrid(const char filename[])
         {
             // Ensure end of file has not been reached yet
             if (gridFile.peek() == EOF)
+            {
+                gridFile.close();
                 return false;
+            }
             
             gridFile >> grid[i][j];
         }
     
     if (gridFile.peek() != EOF)
+    {
+        gridFile.close();
         return false;
+    }
+    gridFile.close();
 
     // Copy temp array
     copy(&grid[0][0], &grid[0][0] + (9 * 9), &m_Grid[0][0]);
@@ -55,7 +62,7 @@ ostream& operator<<(ostream& os, const Grid& grid)
             os << grid.m_Grid[i][j];
 
             if (j < 8)
-                os << ", ";
+                os << ' ';
         }
 
         if (i < 8)

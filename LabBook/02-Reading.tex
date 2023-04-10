@@ -1,0 +1,59 @@
+\section{Reading}
+    \subsection*{Question:}
+        Implement the \mintinline{cpp}{Grid::LoadGrid(const char filename[])} method in Grid.cpp.
+        This method should follow the following pseudo code:
+        \begin{minted}{c}
+            Create an input file stream from filename
+            for each y value from 0 to 8 inclusive
+            {
+                for each x value from 0 to 8 inclusive
+                {
+                    store next value from the input file stream into grid at x,y
+                }
+            }
+            Close input file stream
+        \end{minted}
+            
+    \subsection*{Solution:}
+        \begin{listing}[!ht]
+            \inputminted[firstline=6, lastline=19]{cpp}{../Tasks/02-Reading/Grid.h}
+            \caption{Grid.h}
+        \end{listing}
+
+        \newpage
+
+        \begin{listing}[!ht]
+            \inputminted[firstline=14]{cpp}{../Tasks/02-Reading/Grid.cpp}
+            \caption{Grid.cpp}
+        \end{listing}
+
+    \subsection*{Test Data:}
+        Data was input from the \textit{Grid1.txt} file.
+        
+    \subsection*{Sample Output:}
+
+    \subsection*{Reflection:}
+        I modified the base function template to better handle errors,
+        this is done by returning a boolean for the success state.
+        As for the function itself, a lot could be copied over from the previous
+        lab.
+            
+        \begin{enumerate}
+            \item The file is opened, using the given filename, 
+                if the file cannot be opened then the function ends.
+
+            \item The contents of the file are copied into a temporary array, 
+                the program will loop through the file. Each iteration the program:
+                \begin{itemize}
+                    \item Check if the end of file has been reached, 
+                        if so the function ends with a failure.
+
+                    \item Copy the current number into the appropriate position in the temporary array.
+                \end{itemize}
+                A temporary array is used to avoid data being stored even on a failure.
+                
+            \item Finally the temporary array is copied into the class member and the success state is returned.
+        \end{enumerate}
+
+        Alongside this I also created an ovveride of the streaming operator for the grid
+        class for ease of use when displaying the class.

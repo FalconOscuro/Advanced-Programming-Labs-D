@@ -44,6 +44,11 @@ bool Grid::LoadGrid(const char filename[])
     return true;
 }
 
+/**
+ * @brief Saves grid to a file
+ * 
+ * @param filename Write out file
+ */
 void Grid::SaveGrid(const char filename[])
 {
     ofstream outFile(filename);
@@ -66,7 +71,7 @@ ostream& operator<<(ostream& os, const Grid& grid)
             os << grid.m_Grid[i][j];
 
             if (j < 8)
-                os << ", ";
+                os << ' ';
         }
 
         if (i < 8)
