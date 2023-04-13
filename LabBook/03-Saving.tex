@@ -1,23 +1,22 @@
 \section{Saving}
-    \subsection*{Question:}
+    \subsection*{Question}
         Implement the \mintinline{cpp}{SaveGrid(const char filename[])} method. 
         This method will save the values of \mintinline{cpp}{m_grid} in a similar 
         format to that of the Grid1.txt file. 
         Please use another name for the output file 
         so that your Grid1.txt file is not overwritten.
-            
-    \subsection*{Solution:}
-        \begin{listing}[!ht]
-            \inputminted[firstline=47, lastline=55]{cpp}{../Tasks/03-Saving/Grid.cpp}
+
+    \subsection*{Test Data}
+        Data was input from the \textit{Grid1.txt} file.
+
+    \subsection*{Reflection}
+        Since I created an overload of the streaming operator for the grid class 
+        in the previous task, the \mintinline{cpp}{SaveGrid(const char filename[])} was very easy
+        to implement as I could just open the file, then use the overloaded streaming operator to copy
+        in the data.
+
+    \subsection*{Solution}
+        \begin{listing}[H]
+            \inputminted[firstline=47, lastline=60]{cpp}{../Tasks/03-Saving/Grid.cpp}
             \caption{Grid.cpp}
         \end{listing}
-
-    \subsection*{Test Data:}
-        
-    \subsection*{Sample Output:}
-
-    \subsection*{Reflection:}
-        Since I created an override of the streaming operator for the grid class 
-        in the last task, the \mintinline{cpp}{SaveGrid(const char filename[])} was very easy
-        to implement as I could just open the file, then use the streaming operator to copy
-        the data.
