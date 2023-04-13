@@ -1,17 +1,9 @@
 \section{Linker Errors}
-    \subsection*{Question:}
+    \subsection*{Question}
         Show how not defining functions can lead to linking errors when 
         compiling.
-            
-    \subsection*{Solution:}
-        \inputminted{cpp}{../Tasks/01-Linker-Errors/Grid.h}
-        \inputminted{cpp}{../Tasks/01-Linker-Errors/Grid.cpp}
 
-    \subsection*{Test Data:}
-        None required.
-        
-    \newpage
-    \subsection*{Sample Output:}
+    \subsection*{Sample Output}
         Error message when attempting to compile with linker errors:
 
         \par\noindent\rule{\textwidth}{0.5pt}\\{\scriptsize
@@ -24,10 +16,21 @@
             gmake: *** [Makefile:91: all] Error 2
         }\par\noindent\rule{\textwidth}{0.5pt}
 
-    \subsection*{Reflection:}
+    \subsection*{Reflection}
         In order to define a method for a class within a header file,
-        first a definition is created in the class header,
-        this states the method name, return type and any arguments
+        first the definition is created in the class header,
+        stating the method name, return type and any arguments
         (you may choose to name the arguments, but this has no bearing on the declaration).
         Next a source file is created, including the header file,
         within this the method functionality is declared.
+    
+    \subsection*{Solution}
+        \begin{listing}[H]
+            \inputminted{cpp}{../Tasks/01-Linker-Errors/Grid.h}
+            \caption{Grid.h}
+        \end{listing}
+        
+        \begin{listing}[H]
+            \inputminted{cpp}{../Tasks/01-Linker-Errors/Grid.cpp}
+            \caption{Grid.cpp}
+        \end{listing}
