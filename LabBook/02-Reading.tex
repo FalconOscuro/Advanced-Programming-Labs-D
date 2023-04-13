@@ -1,38 +1,26 @@
 \section{Reading}
-    \subsection*{Question:}
+    \subsection*{Question}
         Implement the \mintinline{cpp}{Grid::LoadGrid(const char filename[])} method in Grid.cpp.
         This method should follow the following pseudo code:
-        \begin{minted}{c}
-            Create an input file stream from filename
-            for each y value from 0 to 8 inclusive
-            {
-                for each x value from 0 to 8 inclusive
+        \begin{listing}[H]
+            \begin{minted}[autogobble]{c}
+                Create an input file stream from filename
+                for each y value from 0 to 8 inclusive
                 {
-                    store next value from the input file stream into grid at x,y
+                    for each x value from 0 to 8 inclusive
+                    {
+                        store next value from the input file stream into grid at x,y
+                    }
                 }
-            }
-            Close input file stream
-        \end{minted}
-            
-    \subsection*{Solution:}
-        \begin{listing}[!ht]
-            \inputminted[firstline=6, lastline=19]{cpp}{../Tasks/02-Reading/Grid.h}
-            \caption{Grid.h}
+                Close input file stream
+            \end{minted}
+            \caption{Load Grid Pseudo Code}
         \end{listing}
 
-        \newpage
-
-        \begin{listing}[!ht]
-            \inputminted[firstline=14]{cpp}{../Tasks/02-Reading/Grid.cpp}
-            \caption{Grid.cpp}
-        \end{listing}
-
-    \subsection*{Test Data:}
+    \subsection*{Test Data}
         Data was input from the \textit{Grid1.txt} file.
-        
-    \subsection*{Sample Output:}
 
-    \subsection*{Reflection:}
+    \subsection*{Reflection}
         I modified the base function template to better handle errors,
         this is done by returning a boolean for the success state.
         As for the function itself, a lot could be copied over from the previous
@@ -55,5 +43,12 @@
             \item Finally the temporary array is copied into the class member and the success state is returned.
         \end{enumerate}
 
-        Alongside this I also created an ovveride of the streaming operator for the grid
+        Alongside this I also created an override of the streaming operator for the grid
         class for ease of use when displaying the class.
+
+    \subsection*{Solution}
+
+        \begin{listing}[H]
+            \inputminted[firstline=14]{cpp}{../Tasks/02-Reading/Grid.cpp}
+            \caption{Grid.cpp}
+        \end{listing}
