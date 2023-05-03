@@ -1,0 +1,17 @@
+\section{Pointer Chains}
+    \subsection*{Question}
+        How would you implement a chain of pointers in C++?.
+
+    \subsection*{Reflection}
+        Pointer chains can be created using the \mintinline{cpp}{void*}
+        data type, a generic memory address pointer.
+        The downside is that to be properly used you have to know what is at the 
+        indicated memory address. In order to get my implementation to function
+        it required converting to a long int pointer, dereferencing then converting
+        back to a void pointer.
+
+    \subsection*{Solution}
+        \begin{listing}[H]
+            \inputminted{cpp}{../Tasks/08-PointerChains/Main.cpp}
+            \caption{Pointer Chain Implementation}
+        \end{listing}
